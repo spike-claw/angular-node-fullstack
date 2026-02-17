@@ -1,0 +1,26 @@
+{
+  "name": "angular-node-fullstack",
+  "version": "1.0.0",
+  "description": "Full-stack application with Angular frontend and Node.js/Express backend",
+  "scripts": {
+    "install:all": "npm install --prefix frontend && npm install --prefix backend",
+    "build": "cd frontend && npm run build",
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm start",
+    "dev": "concurrently \"npm run start:backend\" \"npm run start:frontend\"",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "angular",
+    "nodejs",
+    "express",
+    "fullstack",
+    "typescript"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/spike-claw/angular-node-fullstack.git"
+  }
+}
