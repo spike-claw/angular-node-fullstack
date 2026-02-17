@@ -1,0 +1,28 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "backend/server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "frontend/angular.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "frontend/dist/frontend/browser"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/backend/server.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/frontend/dist/frontend/browser/$1"
+    }
+  ],
+  "installCommand": "cd frontend && npm install && cd ../backend && npm install",
+  "buildCommand": "cd frontend && npm run build"
+}
